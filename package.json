@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120
+  }
+}
