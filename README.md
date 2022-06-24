@@ -2,4 +2,4 @@
 
 This is a simple 2D game made with html css and javascript.
 
-try to get to the other side without beeing run! 😄
+try to get to the other side without beeing run over! 😄
