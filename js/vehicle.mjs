@@ -1,24 +1,35 @@
 export default class Vehicle {
   constructor() {
-    this.positionX = 0
     this.height = 8
+    this.width = 10
     this.lane = this.selectLane()
-    this.vehicle = this.create()
+    this.positionX = this.lane.className === 'lane left-lane' ? 90 : 0 - this.width
+    this.car = this.create()
   }
   create() {
     const car = document.createElement('div')
     car.className = 'car'
+    car.style.height = `${this.height}vh`
+    car.style.width = `${this.width}vw`
+    car.style.backgroundColor = 'red'
+    car.style.left = `${this.positionX}vw`
 
     this.lane.appendChild(car)
+    return car
   }
   selectLane() {
-    const lanes = document.getElementById('board').getElementsByTagName('div')
+    const lanes = document.querySelectorAll('.lane')
+    console.log(lanes)
     const random = Number(Math.random().toFixed(0)) * (lanes.length - 1)
-    console.log('number: ', random)
     return lanes[random]
   }
-  moveLeft() {
-    this.positionX--
+  move() {
+    if (this.lane.className === 'lane left-lane') {
+      this.positionX--
+      this.car.style.left = `${this.positionX}vw`
+    } else {
+      this.positionX++
+      this.car.style.left = `${this.positionX}vw`
+    }
   }
-  moveRight() {}
 }
