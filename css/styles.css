@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -24,7 +23,41 @@ body {
 }
 
 #board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 80vw;
   height: 90vh;
   background-color: #075407;
+}
+
+#board > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 12vh;
+  width: 100%;
+  background-color: #525252;
+}
+
+#top-lane {
+  border-top: 4px solid white;
+  border-bottom: 2px dashed white;
+}
+
+#bottom-lane {
+  border-top: 2px dashed white;
+  border-bottom: 4px solid white;
+}
+
+.middle-lane {
+  border-top: 2px dashed white;
+  border-bottom: 2px dashed white;
+}
+
+.car {
+  height: 8vh;
+  width: 10vw;
+  background-color: red;
 }
