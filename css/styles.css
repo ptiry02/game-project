@@ -44,4 +44,5 @@ body {
 
 .car {
   position: absolute;
+  border-radius: 8px;
 }
