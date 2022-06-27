@@ -8,7 +8,7 @@ export default class Game {
     this.carsArr = []
   }
   start() {
-    const street = new Road(2)
+    new Road(4)
     setInterval(() => {
       if (this.time % 40 === 0) {
         const car = new Vehicle()

@@ -19,8 +19,8 @@ export default class Vehicle {
   }
   selectLane() {
     const lanes = document.querySelectorAll('.lane')
-    console.log(lanes)
-    const random = Number(Math.random().toFixed(0)) * (lanes.length - 1)
+    const random = Math.floor(Math.random() * lanes.length)
+    console.log(random)
     return lanes[random]
   }
   move() {
