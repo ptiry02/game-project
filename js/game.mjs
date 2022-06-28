@@ -18,6 +18,10 @@ export default class Game {
       }
       this.carsArr.forEach((car) => {
         car.move()
+        if (car.positionX + car.width === -10 || car.positionX + car.width === 110) {
+          this.carsArr.shift()
+          car.car.remove()
+        }
       })
       this.time++
     }, 30)
