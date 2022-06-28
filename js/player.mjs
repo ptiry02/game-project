@@ -17,7 +17,7 @@ export default class Player {
     character.style.position = 'absolute'
     character.style.left = `${this.positionX}vw`
     character.style.bottom = `${this.positionY}vh`
-    character.style.borderRadius = '999px'
+    character.style.borderRadius = '4px'
     character.style.transition = `all 0.3s ease`
     document.querySelector('#board').appendChild(character)
     return character
