@@ -4,7 +4,7 @@ export default class Player {
     this.width = this.height * (window.innerHeight / window.innerWidth)
     this.positionX = 45
     this.positionY = 5
-    this.speedY = 1.5
+    this.speedY = 3
     this.speedX = this.speedY * (window.innerHeight / window.innerWidth)
     this.element = this.setPlayer()
   }
@@ -18,7 +18,7 @@ export default class Player {
     character.style.left = `${this.positionX}vw`
     character.style.bottom = `${this.positionY}vh`
     character.style.borderRadius = '999px'
-    character.style.transition = `all 0.${Math.round(this.speedY)}s`
+    character.style.transition = `all 0.3s ease`
     document.querySelector('#board').appendChild(character)
     return character
   }
