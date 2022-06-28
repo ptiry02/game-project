@@ -4,6 +4,8 @@ export default class Player {
     this.width = this.height * (window.innerHeight / window.innerWidth)
     this.positionX = 45
     this.positionY = 5
+    this.speedY = 1.5
+    this.speedX = this.speedY * (window.innerHeight / window.innerWidth)
     this.element = this.setPlayer()
   }
   setPlayer() {
@@ -15,27 +17,27 @@ export default class Player {
     character.style.position = 'absolute'
     character.style.left = `${this.positionX}vw`
     character.style.bottom = `${this.positionY}vh`
+    character.style.borderRadius = '999px'
+    character.style.transition = `all 0.${Math.round(this.speedY)}s`
     document.querySelector('#board').appendChild(character)
     return character
   }
-  moveX(arrow) {
-    if (arrow === 'ArrowLeft') {
-      this.positionX--
-      this.element.style.left = `${`${this.positionX}vw`}`
+  move(arrow) {
+    switch (arrow) {
+      case 'ArrowLeft':
+        this.positionX -= this.speedX
+        break
+      case 'ArrowRight':
+        this.positionX += this.speedX
+        break
+      case 'ArrowDown':
+        this.positionY -= this.speedY
+        break
+      case 'ArrowUp':
+        this.positionY += this.speedY
+        break
     }
-    if (arrow === 'ArrowRight') {
-      this.positionX++
-      this.element.style.left = `${`${this.positionX}vw`}`
-    }
-  }
-  moveY(arrow) {
-    if (arrow === 'ArrowDown') {
-      this.positionY--
-      this.element.style.bottom = `${`${this.positionY}vw`}`
-    }
-    if (arrow === 'ArrowUp') {
-      this.positionY++
-      this.element.style.bottom = `${`${this.positionY}vw`}`
-    }
+    this.element.style.left = `${this.positionX}vw`
+    this.element.style.bottom = `${this.positionY}vh`
   }
 }
