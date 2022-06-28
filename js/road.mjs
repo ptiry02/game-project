@@ -19,7 +19,6 @@ export default class Road {
         : (lane.style.borderBottom = '2px dashed white')
       i % 2 ? (lane.className = 'lane right-lane') : (lane.className = 'lane left-lane')
     })
-    console.log(lanes)
     return lanes
   }
 }

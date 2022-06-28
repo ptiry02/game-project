@@ -1,5 +1,5 @@
 import Road from './road.mjs'
-import Vehicle from './vehicle.mjs'
+import Player from './player.mjs'
 
 export default class Game {
   constructor() {
@@ -8,8 +8,10 @@ export default class Game {
     this.carsArr = []
   }
   start() {
-    new Road(4)
-    setInterval(() => {
+    new Road(2)
+    this.player = new Player()
+    this.setEventListeners()
+    /*setInterval(() => {
       if (this.time % 40 === 0) {
         const car = new Vehicle()
         this.carsArr.push(car)
@@ -18,6 +20,16 @@ export default class Game {
         car.move()
       })
       this.time++
-    }, 30)
+    }, 30)*/
+  }
+  setEventListeners() {
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
+        this.player.moveX(e.code)
+      }
+      if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+        this.player.moveY(e.code)
+      }
+    })
   }
 }
