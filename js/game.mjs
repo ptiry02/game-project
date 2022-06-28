@@ -14,8 +14,7 @@ export default class Game {
     this.setEventListeners()
     setInterval(() => {
       if (this.time % 40 === 0) {
-        const car = new Vehicle()
-        this.carsArr.push(car)
+        this.carsArr.push(new Vehicle())
       }
       this.carsArr.forEach((car) => {
         car.move()
