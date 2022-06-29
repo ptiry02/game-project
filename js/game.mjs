@@ -12,9 +12,9 @@ export default class Game {
     new Road(level)
     this.player = new Player()
     this.setEventListeners()
-    /*setInterval(() => {
+    setInterval(() => {
       if (this.time % 40 === 0) {
-        this.carsArr.push(new Vehicle())
+        this.carsArr.push(new Vehicle(level))
       }
       this.carsArr.forEach((car) => {
         car.move()
@@ -32,7 +32,7 @@ export default class Game {
         }
       })
       this.time++
-    }, 30)*/
+    }, 30)
   }
   setEventListeners() {
     document.addEventListener('keydown', (e) => {

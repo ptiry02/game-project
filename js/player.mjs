@@ -2,7 +2,7 @@ export default class Player {
   constructor() {
     this.height = 6
     this.width = this.height * (700 / (window.innerWidth * 0.9))
-    this.positionX = 45
+    this.positionX = 50
     this.positionY = 5
     this.speedY = 3
     this.speedX = this.speedY * (window.innerHeight / window.innerWidth)
@@ -37,7 +37,7 @@ export default class Player {
         this.positionY += this.speedY
         break
     }
-    this.element.style.left = `${this.positionX}vw`
-    this.element.style.bottom = `${this.positionY}vh`
+    this.element.style.left = `${this.positionX}%`
+    this.element.style.bottom = `${this.positionY}%`
   }
 }
