@@ -1,8 +1,4 @@
-const LanePositions = [
-  [10, 60],
-  [5, 38, 71],
-  [4, 29, 54, 79],
-]
+import { LanePositions } from './helpers/constants.mjs'
 
 const vehicleHeights = [30, 20, 15]
 

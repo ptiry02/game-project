@@ -1,4 +1,4 @@
-const backgrounds = ['./assets/roads/2-lane.png', './assets/roads/3-lane.png', './assets/roads/4-lane.png']
+import { backgrounds } from './helpers/constants.mjs'
 
 export default class Road {
   constructor(level) {

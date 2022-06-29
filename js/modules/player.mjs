@@ -1,5 +1,5 @@
-const playerHeights = [20, 13.33, 10]
-const playerStartPositions = [-40, -26.37, -20]
+import { playerHeights } from './helpers/constants.mjs'
+import { playerStartPositions } from './helpers/constants.mjs'
 
 export default class Player {
   constructor(level) {
