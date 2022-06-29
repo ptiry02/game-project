@@ -4,10 +4,12 @@ const LanePositions = [
   [4, 29, 54, 79],
 ]
 
+const vehicleHeights = [30, 20, 15]
+
 export default class Vehicle {
   constructor(level) {
-    this.height = 7
-    this.width = 9
+    this.height = vehicleHeights[level]
+    this.width = 10
     this.road = document.getElementById('road')
     const { lane, side } = this.setRandomLane(level)
     this.positionY = lane
@@ -15,11 +17,10 @@ export default class Vehicle {
     this.car = this.create(level)
   }
   create() {
-    console.log(this.positionY)
     const car = document.createElement('div')
     car.className = 'car'
-    car.style.height = `${this.height}vh`
-    car.style.width = `${this.width}vw`
+    car.style.height = `${this.height}%`
+    car.style.width = `${this.width}%`
     car.style.backgroundColor = 'red'
     car.style.left = `${this.positionX}%`
     car.style.bottom = `${this.positionY}%`

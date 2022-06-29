@@ -1,11 +1,14 @@
+const playerHeights = [20, 13.33, 10]
+const playerStartPositions = [-40, -26.37, -20]
+
 export default class Player {
-  constructor() {
-    this.height = 6
-    this.width = this.height * (700 / (window.innerWidth * 0.9))
+  constructor(level) {
+    this.height = playerHeights[level]
+    this.width = this.height * ((700 * 0.12 * (level + 2)) / (window.innerWidth * 0.9))
     this.positionX = 50
-    this.positionY = 5
-    this.speedY = 3
-    this.speedX = this.speedY * (window.innerHeight / window.innerWidth)
+    this.positionY = playerStartPositions[level]
+    this.speedY = 8
+    this.speedX = this.speedY * ((700 * 0.12 * (level + 2)) / (window.innerWidth * 0.9))
     this.element = this.setPlayer()
   }
   setPlayer() {
@@ -18,8 +21,8 @@ export default class Player {
     character.style.left = `${this.positionX}%`
     character.style.bottom = `${this.positionY}%`
     character.style.borderRadius = '4px'
-    character.style.transition = `all 0.3s ease`
-    document.querySelector('#board').appendChild(character)
+    character.style.transition = `all 0.3s`
+    document.querySelector('#road').appendChild(character)
     return character
   }
   move(arrow) {

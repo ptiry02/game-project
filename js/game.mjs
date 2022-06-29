@@ -10,7 +10,7 @@ export default class Game {
   }
   start(level) {
     new Road(level)
-    this.player = new Player()
+    this.player = new Player(level)
     this.setEventListeners()
     setInterval(() => {
       if (this.time % 40 === 0) {
@@ -21,12 +21,12 @@ export default class Game {
         if (
           this.player.positionX < car.positionX + car.width &&
           this.player.positionX + this.player.width > car.positionX &&
-          this.player.positionY < car.positionX + car.height &&
-          this.player.height + this.player.positionY > car.positionX
+          this.player.positionY < car.positionY + car.height &&
+          this.player.positionY + this.player.height > car.positionY
         ) {
           console.log('collision detected !!')
         }
-        if (car.positionX + car.width === -10 || car.positionX + car.width === 110) {
+        if (car.positionX + car.width === -10 || car.positionX + car.width === 120) {
           this.carsArr.shift()
           car.car.remove()
         }
