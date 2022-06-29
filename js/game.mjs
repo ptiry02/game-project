@@ -8,8 +8,8 @@ export default class Game {
     this.time = 0
     this.carsArr = []
   }
-  start() {
-    new Road(2)
+  start(level) {
+    new Road(level)
     this.player = new Player()
     this.setEventListeners()
     /*setInterval(() => {

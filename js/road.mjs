@@ -1,17 +1,20 @@
+const backgrounds = ['./assets/roads/2-lane.png', './assets/roads/3-lane.png', './assets/roads/4-lane.png']
+
 export default class Road {
-  constructor(numberOfLanes) {
-    this.height = 12 * numberOfLanes
-    //this.positionY =
-    this.element = this.setRoad(numberOfLanes)
+  constructor(level) {
+    this.height = 12 * (level + 2)
+    this.positionY = (100 - this.height) / 2
+    this.element = this.setRoad(level)
   }
-  setRoad(numberOfLanes) {
+  setRoad(level) {
     const road = document.createElement('div')
 
-    road.style.height = `${this.height}vh`
+    road.id = 'road'
+    road.style.height = `${this.height}%`
     road.style.width = '100%'
     road.style.position = 'absolute'
-    road.style.bottom = `${(700 - 700 * 0.12 * numberOfLanes) / 2}`
-    road.style.backgroundColor = '#525252'
+    road.style.bottom = `${this.positionY}%`
+    road.style.backgroundImage = `url(${backgrounds[level]})`
 
     document.querySelector('#board').appendChild(road)
 

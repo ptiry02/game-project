@@ -1,4 +1,4 @@
 import Game from './game.mjs'
 
 const game = new Game()
-game.start()
+game.start(0)
