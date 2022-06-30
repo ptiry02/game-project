@@ -1,5 +1,6 @@
 import { playerHeights } from './helpers/constants.mjs'
 import { playerStartPositions } from './helpers/constants.mjs'
+import { chickenImgs } from './helpers/constants.mjs'
 
 export default class Player {
   constructor(level) {
@@ -18,6 +19,7 @@ export default class Player {
     character.style.height = `${this.height}%`
     character.style.left = `${this.positionX}%`
     character.style.bottom = `${this.positionY}%`
+    character.style.backgroundImage = `url(${chickenImgs.up})`
     document.querySelector('#road').appendChild(character)
     return character
   }
@@ -28,15 +30,19 @@ export default class Player {
   move(arrow) {
     switch (arrow) {
       case 'ArrowLeft':
+        document.getElementById('player').style.backgroundImage = `url(${chickenImgs.left})`
         this.positionX -= this.speedX
         break
       case 'ArrowRight':
+        document.getElementById('player').style.backgroundImage = `url(${chickenImgs.right})`
         this.positionX += this.speedX
         break
       case 'ArrowDown':
+        document.getElementById('player').style.backgroundImage = `url(${chickenImgs.down})`
         this.positionY -= this.speedY
         break
       case 'ArrowUp':
+        document.getElementById('player').style.backgroundImage = `url(${chickenImgs.up})`
         this.positionY += this.speedY
         break
     }
