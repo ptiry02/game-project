@@ -1,6 +1,4 @@
-import { playerHeights } from './helpers/constants.mjs'
-import { playerStartPositions } from './helpers/constants.mjs'
-import { chickenImgs } from './helpers/constants.mjs'
+import { playerHeights, playerStartPositions, chickenImgs } from './helpers/constants.mjs'
 
 export default class Player {
   constructor(level) {

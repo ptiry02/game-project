@@ -7,6 +7,11 @@ export const chickenImgs = {
   right: '../assets/chicken/chicken-right.png',
 }
 
+export const carImgs = {
+  left: '../assets/cars/blue-car-left.png',
+  right: '../assets/cars/blue-car-right.png',
+}
+
 export const LanePositions = [
   [10, 60],
   [5, 38, 71],

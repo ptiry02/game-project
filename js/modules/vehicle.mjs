@@ -1,10 +1,9 @@
-import { LanePositions } from './helpers/constants.mjs'
-import { vehicleHeights } from './helpers/constants.mjs'
+import { LanePositions, vehicleHeights, carImgs } from './helpers/constants.mjs'
 
 export default class Vehicle {
   constructor(level) {
     this.height = vehicleHeights[level]
-    this.width = 10
+    this.width = 7
     this.road = document.getElementById('road')
     const { lane, side } = this.setRandomLane(level)
     this.positionY = lane
@@ -16,9 +15,9 @@ export default class Vehicle {
     car.className = 'car'
     car.style.height = `${this.height}%`
     car.style.width = `${this.width}%`
-    car.style.backgroundColor = 'red'
     car.style.left = `${this.positionX}%`
     car.style.bottom = `${this.positionY}%`
+    car.style.backgroundImage = this.positionX === 100 ? `url(${carImgs.left})` : `url(${carImgs.right})`
 
     this.road.appendChild(car)
     return car
