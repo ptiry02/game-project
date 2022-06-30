@@ -21,6 +21,10 @@ export default class Player {
     document.querySelector('#road').appendChild(character)
     return character
   }
+  reset(level) {
+    this.positionX = 50
+    this.positionY = playerStartPositions[level]
+  }
   move(arrow) {
     switch (arrow) {
       case 'ArrowLeft':
