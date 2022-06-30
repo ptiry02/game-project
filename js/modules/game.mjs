@@ -70,8 +70,8 @@ export default class Game {
     }, trafficSpeed)
   }
   setDificulty(level) {
-    const trafficAmount = level === 0 ? 27 : level === 1 ? 20 : 30
-    const trafficSpeed = level === 0 ? 30 : level === 1 ? 30 : 30
+    const trafficAmount = level === 0 ? 27 : level === 1 ? 20 : 15
+    const trafficSpeed = level === 0 ? 25 : level === 1 ? 25 : 25
     return { trafficAmount, trafficSpeed }
   }
 }

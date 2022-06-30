@@ -7,7 +7,7 @@ export default class Player {
     this.width = this.height * ((700 * 0.12 * (level + 2)) / (window.innerWidth * 0.9))
     this.positionX = 50
     this.positionY = playerStartPositions[level]
-    this.speedY = 2.7
+    this.speedY = level === 0 ? 3.5 : level === 1 ? 2.33 : 1.75
     this.speedX = this.speedY * ((700 * 0.12 * (level + 2)) / (window.innerWidth * 0.9))
     this.element = this.setPlayer()
   }
@@ -16,12 +16,8 @@ export default class Player {
     character.id = 'player'
     character.style.width = `${this.width}%`
     character.style.height = `${this.height}%`
-    character.style.backgroundColor = 'blue'
-    character.style.position = 'absolute'
     character.style.left = `${this.positionX}%`
     character.style.bottom = `${this.positionY}%`
-    character.style.borderRadius = '4px'
-    character.style.transition = `all 0.1s`
     document.querySelector('#road').appendChild(character)
     return character
   }

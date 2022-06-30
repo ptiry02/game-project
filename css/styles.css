@@ -35,6 +35,13 @@ body {
 .car {
   position: absolute;
   border-radius: 8px;
-  transition: all 0.2s linear;
+  transition: all 0.08s linear;
   z-index: 1;
+}
+
+#player {
+  position: absolute;
+  background-color: blue;
+  border-radius: 4px;
+  transition: all 0.08s;
 }
