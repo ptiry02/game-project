@@ -9,3 +9,5 @@ export const LanePositions = [
 export const playerHeights = [20, 13.33, 10]
 
 export const playerStartPositions = [-40, -26.37, -20]
+
+export const vehicleHeights = [30, 20, 15]

@@ -1,6 +1,5 @@
 import { LanePositions } from './helpers/constants.mjs'
-
-const vehicleHeights = [30, 20, 15]
+import { vehicleHeights } from './helpers/constants.mjs'
 
 export default class Vehicle {
   constructor(level) {
