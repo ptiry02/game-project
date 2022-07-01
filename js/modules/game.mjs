@@ -41,7 +41,6 @@ export default class Game {
       this.keyState['ArrowDown']
     ) {
       this.player.move(this.keyState.key)
-      console.log(Math.floor(this.player.positionY))
     }
   }
   setTrafficLevel(level) {
